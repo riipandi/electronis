@@ -1,10 +1,13 @@
 {
   "name": "electronis",
-  "version": "1.0.0",
+  "productName": "Electronis",
   "description": "An Electron application with Adonisjs as backend",
+  "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron . "
+    "start": "electron . ",
+    "build:win": "electron-packager . Electronis --platform=win32 --arch=x64 --out=build --icon=src/public/favicon.ico --prune=true --overwrite",
+    "installer:win": "node build.js"
   },
   "repository": "https://github.com/riipandi/electronis",
   "keywords": [
@@ -15,6 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^3.0.10",
+    "electron-packager": "^12.2.0",
+    "electron-winstaller": "^2.7.0",
     "npm-run-all": "^4.1.3"
   }
 }
