@@ -1,0 +1,20 @@
+{
+  "name": "electronis",
+  "version": "1.0.0",
+  "description": "An Electron application with Adonisjs as backend",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . "
+  },
+  "repository": "https://github.com/riipandi/electronis",
+  "keywords": [
+    "electron",
+    "adonisjs"
+  ],
+  "author": "Aris Ripandi",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^3.0.10",
+    "npm-run-all": "^4.1.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.tmb": true,
+		"**/.DS_Store": true,
+		"**/.quarantine": true,
+		"**/node_modules": true,
+		"**/.circleci": true,
+		"**/.babelrc": true,
+		"**/.editorconfig": true,
+		"**/.gitattributes": true,
+		"**/.gitlab-ci.yml": true,
+		"**/.vsts-ci.yml": true,
+		"**/tslint.json": true,
+		"**/tsconfig.json": true,
+		"**/firebase-debug.log": true,
+		"**/package-lock.json": true,
+		"**/tests-jest.xml": true,
+		"**/yarn.lock": true,
+		"**/yarn-error.log": true,
+		"**/docker": true,
+		"**/ace": true
+	},
+	"files.trimTrailingWhitespace": true,
+	"prettier.singleQuote": true,
+}
