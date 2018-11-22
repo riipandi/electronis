@@ -65,6 +65,7 @@ const template = [
         type: 'separator'
       },
       {
+        label: "Full Screen",
         role: 'togglefullscreen'
       }
     ]
