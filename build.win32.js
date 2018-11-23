@@ -8,9 +8,9 @@ var electronInstaller = require('electron-winstaller');
 result = electronInstaller.createWindowsInstaller({
   appDirectory: 'build/Electronis-win32-x64',
   setupExe: 'ElectronisInstaller.exe',
-  setupIcon: 'src/public/favicon.ico',
+  setupIcon: 'assets/appicon.ico',
   title: 'Electronis Installer',
-  loadingGif: 'loading.gif',
+  loadingGif: 'assets/loading.gif',
   outputDirectory: 'dist',
   authors: 'Aris Ripandi',
   exe: 'electronis.exe'

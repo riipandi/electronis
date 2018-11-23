@@ -14,7 +14,7 @@ let mainWindow;
 
 const appName = app.getName();
 const appVersion = app.getVersion();
-const icon = 'src/public/pyramid.png';
+const icon = 'assets/appicon.png';
 
 function createWindow() {
   // Create the browser window.
@@ -105,7 +105,7 @@ const showAbout = () => {
   dialog.showMessageBox({
     title: `About ${appName}`,
     message: `${appName} ${appVersion}`,
-    detail: `Crafted by Aris Ripandi\n\nCopyright © 2018 Ruhay Creative Studio.`,
+    detail: `Crafted by Aris Ripandi\nCopyright © 2018 Ruhay Creative Studio.`,
     buttons: [],
     icon
   });
