@@ -37,7 +37,7 @@
     resetable "^1.0.3"
     uuid "^3.3.2"
 
-"@adonisjs/bodyparser@^2.0.5":
+"@adonisjs/bodyparser@^2.0.9":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@adonisjs/bodyparser/-/bodyparser-2.0.9.tgz#667798e7b0f2cf975e8fa7a814b7932d2097b61c"
   integrity sha512-1wE53LBPflolar9Jq+VF22I4tIJZklsXAE9pDxr9t1DuqpvB8TA4uSvLM2UjQFtX7iTQ85iWZqZCRt05jbsziQ==
@@ -69,7 +69,7 @@
     lodash "^4.17.10"
     require-stack "^1.0.2"
 
-"@adonisjs/framework@^5.0.9":
+"@adonisjs/framework@^5.0.12":
   version "5.0.12"
   resolved "https://registry.yarnpkg.com/@adonisjs/framework/-/framework-5.0.12.tgz#97186a19c68a6304e8dea3bf00eb0ae2b056884c"
   integrity sha512-J5cvqLHuVQUt5ymuqcPau44zgSPaeWKriOPXbsANXuR+eQHtkVqMQPZI1uElXb9+xZey7ZS0CI+NSniRPVT64w==
@@ -143,7 +143,7 @@
     haye "^2.0.1"
     lodash "^4.17.5"
 
-"@adonisjs/session@^1.0.27":
+"@adonisjs/session@^1.0.28":
   version "1.0.28"
   resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-1.0.28.tgz#626baee438cd1546d88838f98c1ada226c40a7c5"
   integrity sha512-hr44JVYxsqy/yY5vRVS/XV6sPP06UR1WFiJ7cqcwv+fR+tufW3wboadMa6Rqk0e4wMx01bUJgmsl+tqcXdTUug==

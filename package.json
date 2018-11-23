@@ -5,12 +5,15 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
+    "dep": "yarn install && cd src && yarn install",
+    "setup": "cd src && adonis key:generate",
     "start": "electron . ",
     "dev": "cd src && adonis serve --dev",
     "build:win": "electron-packager . electronis --platform=win32 --arch=x64 --out=build --icon=src/public/favicon.ico --prune=true --overwrite",
     "installer:win": "node build.win32.js"
   },
   "repository": "https://github.com/riipandi/electronis",
+  "private": true,
   "keywords": [
     "electron",
     "adonisjs"

@@ -1,34 +1,40 @@
-//Adonis server
+// Adonis server
 server = require('./src/server');
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
+const {
+  app,
+  dialog,
+  BrowserWindow,
+  Menu,
+  globalShortcut
+} = require('electron');
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+
+const appName = app.getName();
+const appVersion = app.getVersion();
+const icon = 'src/public/pyramid.png';
 
 function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 1200, height: 800, frame: true });
+  mainWindow = new BrowserWindow({ width: 860, height: 600, frame: true });
 
-  // and load the index.html of the app.
+  // and load the the application.
   // mainWindow.loadFile('index.html')
   mainWindow.loadURL('http://127.0.0.1:3301');
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
-
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
   });
 
-  globalShortcut.register('CommandOrControl+Q', () => {
+  globalShortcut.register('CommandOrControl+Shift+W', () => {
     app.quit();
+  });
+
+  globalShortcut.register('F1', () => {
+    showAbout();
   });
 }
 
@@ -65,7 +71,7 @@ const template = [
         type: 'separator'
       },
       {
-        label: "Full Screen",
+        label: 'Full Screen',
         role: 'togglefullscreen'
       }
     ]
@@ -85,11 +91,25 @@ const template = [
         type: 'separator'
       },
       {
-        label: 'About'
+        label: 'About',
+        click() {
+          showAbout();
+        }
       }
     ]
   }
 ];
+
+// Display about dialog.
+const showAbout = () => {
+  dialog.showMessageBox({
+    title: `About ${appName}`,
+    message: `${appName} ${appVersion}`,
+    detail: `Crafted by Aris Ripandi\n\nCopyright © 2018 Ruhay Creative Studio.`,
+    buttons: [],
+    icon
+  });
+};
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
