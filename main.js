@@ -14,7 +14,7 @@ let mainWindow;
 
 const appName = app.getName();
 const appVersion = app.getVersion();
-const icon = 'assets/appicon.png';
+const icon = 'resources/appicon.png';
 
 function createWindow() {
   // Create the browser window.
