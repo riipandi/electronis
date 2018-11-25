@@ -2,27 +2,40 @@
 server = require('./src/server');
 
 // Modules to control application life and create native browser window
+const path = require('path');
+
+const electron = require('electron');
+
 const {
   app,
   dialog,
   BrowserWindow,
   Menu,
   globalShortcut
-} = require('electron');
+} = electron;
 
 let mainWindow;
 
-const appName = app.getName();
-const appVersion = app.getVersion();
-const icon = 'resources/appicon.png';
+let appName = app.getName();
+let appVersion = app.getVersion();
+let icon = 'resources/appicon.png';
 
 function createWindow() {
+
+  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 860, height: 600, frame: true });
+  mainWindow = new BrowserWindow({
+    width: width * 0.6,
+    height: height * 0.8,
+    icon: path.join(__dirname, 'resources/appicon.png'),
+    frame: true
+  })
+
 
   // and load the the application.
   // mainWindow.loadFile('index.html')
-  mainWindow.loadURL('http://127.0.0.1:3301');
+  mainWindow.loadURL('http://127.0.0.1:3301/');
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
