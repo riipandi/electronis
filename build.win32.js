@@ -18,7 +18,7 @@ result = electronInstaller.createWindowsInstaller({
 
 result.then(
   () => {
-    console.log('The installers of your application were succesfully created!');
+    console.log('The installers of your application were succwesfully created!');
   },
   e => {
     console.log(`Well, sometimes you are not so lucky: ${e.message}`);
