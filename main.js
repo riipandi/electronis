@@ -1,10 +1,14 @@
 // Adonis server
 server = require('./src/server');
 
-// Modules to control application life and create native browser window
+// Modules to control application life
+// and create native browser window.
 const path = require('path');
 
 const electron = require('electron');
+
+const os = require('os');
+var apiProcess = null;
 
 const {
   app,
@@ -20,6 +24,33 @@ let appName = app.getName();
 let appVersion = app.getVersion();
 let icon = 'resources/appicon.png';
 
+//  run server
+function startApi() {
+  var proc = require('child_process').spawn;
+  var apipath = path.join(__dirname, '.\\server\\bin\\mysqld.exe')
+  if (os.platform() === 'darwin') {
+    apipath = path.join(__dirname, '..//api//bin//dist//osx//Api')
+  }
+
+  apiProcess = proc(apipath)
+  apiProcess.stdout.on('data', (data) => {
+    writeLog(`stdout: ${data}`);
+    if (mainWindow == null) {
+      createWindow();
+    }
+  });
+}
+
+//Kill process when electron exits
+process.on('exit', function () {
+  writeLog('exit');
+  apiProcess.kill();
+});
+
+function writeLog(msg){
+  console.log(msg);
+}
+
 function createWindow() {
 
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
@@ -31,7 +62,6 @@ function createWindow() {
     icon: path.join(__dirname, 'resources/appicon.png'),
     frame: true
   })
-
 
   // and load the the application.
   // mainWindow.loadFile('index.html')

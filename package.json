@@ -3,27 +3,39 @@
   "productName": "Electronis",
   "description": "An Electron application with Adonisjs as backend",
   "version": "1.0.0",
+  "private": true,
+  "author": "Aris Ripandi",
+  "license": "MIT",
   "main": "main.js",
   "scripts": {
     "dep": "yarn install && cd src && yarn install",
     "setup": "cd src && adonis key:generate",
-    "start": "electron . ",
     "dev": "cd src && adonis serve --dev",
-    "build:win": "electron-packager . electronis --platform=win32 --arch=x64 --out=build --icon=src/public/favicon.ico --prune=true --overwrite",
-    "installer:win": "node build.win32.js"
+    "start": "electron . ",
+    "dist": "build"
   },
-  "repository": "https://github.com/riipandi/electronis",
-  "private": true,
-  "keywords": [
-    "electron",
-    "adonisjs"
-  ],
-  "author": "Aris Ripandi",
-  "license": "MIT",
+  "build": {
+    "appId": "electronis",
+    "directories": {
+      "buildResources": "./assets",
+      "output": "./dist"
+    },
+    "mac": {
+      "category": "electronis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
   "devDependencies": {
-    "electron": "^3.0.10",
-    "electron-packager": "^12.2.0",
-    "electron-winstaller": "^2.7.0",
+    "electron": "^3.0",
+    "electron-builder": "^20.38",
     "npm-run-all": "^4.1.3"
   }
 }
